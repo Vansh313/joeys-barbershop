@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joey’s Downtown Dapper Barbershop | Vero Beach, FL</title>
+<meta name="description" content="Joey’s Downtown Dapper Barbershop on 14th Ave in Vero Beach. Haircuts, skin fades, beard trims and straight razor service. 4.7 stars from 384 Google reviews.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Rye&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#120d0f; --panel:#1c1518; --gold:#f0b33a; --red:#9a1212; --magenta:#a3195b;
+  --teal:#1f7a68; --purple:#8a5cc4; --cream:#f5e9c8;
+  --display:"Rye","Georgia",serif; --body:"Barlow","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font:400 1.05rem/1.6 var(--body)}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{width:min(1100px,92%);margin-inline:auto}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(18,13,15,.94);backdrop-filter:blur(6px);border-bottom:3px solid var(--magenta)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 0}
+.logo{font:1.15rem/1.1 var(--display);color:var(--gold);text-decoration:none}
+nav{display:flex;gap:1.4rem;align-items:center}
+nav a{text-decoration:none;font-weight:500}
+nav a:hover{color:var(--gold)}
+.btn{display:inline-block;padding:.7rem 1.4rem;border-radius:3px;font-weight:600;text-decoration:none;background:var(--gold);color:var(--ink);border:2px solid var(--gold)}
+.btn:hover{background:var(--cream);border-color:var(--cream)}
+.btn.ghost{background:transparent;color:var(--cream);border-color:var(--cream)}
+.btn.ghost:hover{background:var(--cream);color:var(--ink)}
+
+/* hero: storefront with the awning colours as a stripe */
+.hero{position:relative;min-height:84vh;display:flex;align-items:flex-end;background:#000 url(images/storefront.jpg) center 30%/cover}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(18,13,15,.96) 8%,rgba(18,13,15,.55) 55%,rgba(18,13,15,.15))}
+.hero .wrap{position:relative;padding:4rem 0 3.5rem}
+.hero h1{font:clamp(2.4rem,7vw,5rem)/1.05 var(--display);color:var(--gold);max-width:14ch;text-shadow:0 3px 0 var(--red)}
+.hero p{max-width:34rem;margin:1rem 0 1.6rem;font-size:1.2rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem}
+.status{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.2rem;padding:.35rem .9rem;border:1px solid var(--gold);border-radius:99px;font-weight:500;font-size:.95rem;background:rgba(18,13,15,.6)}
+.dot{width:.65rem;height:.65rem;border-radius:50%;background:#888}
+.status.open .dot{background:#4ad66d}
+.status.closed .dot{background:#e5484d}
+.stripe{height:14px;background:linear-gradient(var(--gold) 0 33%,var(--magenta) 33% 100%)}
+
+section{padding:4.5rem 0}
+h2{font:clamp(1.8rem,4vw,2.6rem)/1.15 var(--display);color:var(--gold);margin-bottom:1.6rem}
+
+/* price board: styled like the shop's own printed price list */
+.board{background:var(--gold);color:var(--ink);padding:.7rem;border-radius:22px;max-width:640px;margin-inline:auto}
+.board-in{border:4px solid var(--red);border-radius:16px;padding:1.6rem 1.6rem 1.2rem}
+.board h3{font:1.5rem/1.2 var(--display);margin:.2rem 0 .8rem;text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:5px}
+.board h3:not(:first-child){margin-top:1.6rem}
+.row{display:flex;align-items:baseline;gap:.6rem;padding:.35rem 0;font-weight:600;letter-spacing:.02em}
+.row small{display:block;font-weight:500;font-size:.85rem;letter-spacing:0}
+.row i{flex:1;border-bottom:2px dotted rgba(18,13,15,.55);transform:translateY(-4px)}
+.row b{font-weight:600;font-size:1.15rem}
+.note{margin-top:1.2rem;font-size:.9rem;text-align:center;font-weight:600}
+.note span{display:block;margin-top:.4rem;color:var(--red)}
+
+/* story */
+.story{background:var(--panel)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.split img{border-radius:6px;border:6px solid var(--teal)}
+.split p+p{margin-top:1rem}
+.rating{display:flex;gap:2rem;margin-top:1.6rem;flex-wrap:wrap}
+.rating div{border-left:4px solid var(--magenta);padding-left:.9rem}
+.rating strong{display:block;font:1.9rem/1 var(--display);color:var(--gold)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:2fr 1fr;gap:1rem}
+.gal img{width:100%;height:100%;object-fit:cover;border-radius:6px}
+.gal .tall{grid-row:span 2;min-height:420px}
+.gal .tall,.gal figure{overflow:hidden;border-radius:6px}
+.gal figure{height:260px}
+
+/* visit */
+.visit{background:var(--panel)}
+.hours{list-style:none;padding:0;max-width:26rem}
+.hours li{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px solid rgba(245,233,200,.2)}
+.hours li.today{color:var(--gold);font-weight:600}
+.addr{margin:1.2rem 0}
+.map{width:100%;height:100%;min-height:340px;border:0;border-radius:6px;filter:grayscale(.2)}
+
+footer{padding:2rem 0 2.5rem;text-align:center;font-size:.9rem;opacity:.8;border-top:6px solid var(--teal)}
+
+@media (max-width:760px){
+  nav a:not(.btn){display:none}
+  .split,.gal{grid-template-columns:1fr}
+  .gal .tall{grid-row:auto;min-height:300px}
+  .hero{min-height:78vh}
+  .map{min-height:300px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top">Joey’s Downtown Dapper</a>
+    <nav aria-label="Main">
+      <a href="#prices">Prices</a>
+      <a href="#gallery">Shop</a>
+      <a href="#visit">Hours &amp; location</a>
+      <a class="btn" href="tel:+17725842826">Call now</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div class="status" id="status"><span class="dot"></span><span id="statusText">Vero Beach, FL</span></div>
+      <h1>Joey’s Downtown Dapper Barbershop</h1>
+      <p>Haircuts, skin fades, beard trims and straight razor service on 14th Avenue in downtown Vero Beach.</p>
+      <div class="cta">
+        <a class="btn" href="tel:+17725842826">Call +1 772-584-2826</a>
+        <a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&destination=2005+14th+Ave,+Vero+Beach,+FL+32960" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    </div>
+  </div>
+  <div class="stripe" aria-hidden="true"></div>
+
+  <section id="prices">
+    <div class="wrap">
+      <h2 style="text-align:center">Price list</h2>
+      <div class="board">
+        <div class="board-in">
+          <h3>Haircuts</h3>
+          <div class="row">Regular haircut <i></i> <b>$25</b></div>
+          <div class="row">Skin fade <i></i> <b>$30</b></div>
+          <div class="row">Children’s skin fade <i></i> <b>$20</b></div>
+          <div class="row"><span>Children’s haircut<small>12 &amp; under</small></span> <i></i> <b>$15</b></div>
+          <h3>Additional services</h3>
+          <div class="row">Beard trim <i></i> <b>$15</b></div>
+          <div class="row"><span>Beard trim added to haircut</span> <i></i> <b>+$10</b></div>
+          <p class="note">Straight razor included when requested.<span>Gratuity not included. Please tip your barber!</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="wrap split">
+      <img src="images/owner-10years.jpg" alt="Joey with two kids in front of the shop, under a banner celebrating 10 years in business" loading="lazy" width="680" height="700">
+      <div>
+        <h2>Ten years downtown</h2>
+        <p>Joey’s has been cutting hair on 14th Avenue for over a decade. Kids, dads, regulars and first-timers all share the same floor, with a big Connect Four set in the corner to keep the little ones busy.</p>
+        <p>Walk in, sign the sheet, grab a seat. Your barber takes it from there.</p>
+        <div class="rating">
+          <div><strong>4.7 ★</strong>Google rating</div>
+          <div><strong>384</strong>Google reviews</div>
+          <div><strong>10 yrs</strong>in business</div>
+        </div>
+        <p style="margin-top:1.6rem"><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Joey%27s+Downtown+Dapper+Barbershop+Vero+Beach" target="_blank" rel="noopener">Read the reviews on Google</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <h2>Inside the shop</h2>
+      <div class="gal">
+        <div class="tall"><img src="images/shop-chairs.jpg" alt="Barbers cutting hair at full chairs inside Joey’s, with a Harley-Davidson parked by the mirrors" loading="lazy"></div>
+        <figure><img src="images/shop-floor.jpg" alt="Brick wall with the purple Joey’s sign, ring lights and barber chairs" loading="lazy"></figure>
+        <figure><img src="images/storefront.jpg" alt="Joey’s Downtown Dapper storefront with the pink and gold awning" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap split">
+      <div>
+        <h2>Hours &amp; location</h2>
+        <ul class="hours" id="hours">
+          <li data-d="0"><span>Sunday</span><span>Closed</span></li>
+          <li data-d="1"><span>Monday</span><span>Closed</span></li>
+          <li data-d="2"><span>Tuesday</span><span>9 AM – 5:30 PM</span></li>
+          <li data-d="3"><span>Wednesday</span><span>9 AM – 5:30 PM</span></li>
+          <li data-d="4"><span>Thursday</span><span>9 AM – 6:30 PM</span></li>
+          <li data-d="5"><span>Friday</span><span>9 AM – 6:30 PM</span></li>
+          <li data-d="6"><span>Saturday</span><span>9 AM – 2 PM</span></li>
+        </ul>
+        <p class="addr"><strong>2005 14th Ave<br>Vero Beach, FL 32960</strong></p>
+        <div class="cta">
+          <a class="btn" href="tel:+17725842826">Call +1 772-584-2826</a>
+          <a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&destination=2005+14th+Ave,+Vero+Beach,+FL+32960" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+      <iframe class="map" title="Map showing Joey’s Downtown Dapper Barbershop" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d452420.80635576445!2d-81.0092451109375!3d27.638835799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88de5efd5365e033%3A0x191d793e2c22f0f9!2sJoey's%20Downtown%20Dapper%20Barbershop!5e0!3m2!1sen!2sin!4v1794988734687!5m2!1sen!2sin" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© Joey’s Downtown Dapper Barbershop · 2005 14th Ave, Vero Beach, FL</div>
+</footer>
+
+<script>
+// Open/closed badge + highlight today, using the shop's own time zone (Florida).
+(function(){
+  var H={0:null,1:null,2:[9,17.5],3:[9,17.5],4:[9,18.5],5:[9,18.5],6:[9,14]};
+  try{
+    var p=new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date());
+    var g=function(t){return p.filter(function(x){return x.type===t})[0].value};
+    var day=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(g("weekday"));
+    var now=(+g("hour")%24)+(+g("minute"))/60, h=H[day];
+    var open=h&&now>=h[0]&&now<h[1];
+    var s=document.getElementById("status");
+    s.classList.add(open?"open":"closed");
+    document.getElementById("statusText").textContent=open?"Open now":"Closed right now";
+    var li=document.querySelector('#hours li[data-d="'+day+'"]');
+    if(li)li.classList.add("today");
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
